@@ -53,9 +53,9 @@ export default function App() {
         <div className="flex flex-col flex-wrap items-center">
           <div className="flex flex-col flex-wrap items-center w-screen max-w-7xl py-2">
             <NavList />
-            <div className="max-w-6xl">
+            <main className="max-w-6xl">
               <Outlet />
-            </div>
+            </main>
           </div>
         </div>
         <ScrollRestoration />
