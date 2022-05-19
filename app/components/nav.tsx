@@ -67,7 +67,7 @@ export function NavList() {
 								/>
 							</svg>
 						</NavLink>
-						<ul className="p-2 bg-base-100">
+						<ul className="menu w-full bg-base-100">
 							<li>
 								<NavLink 
 									to={`/comics/abs?theme=${theme}`}

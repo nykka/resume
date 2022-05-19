@@ -6,4 +6,14 @@ module.exports = {
     extend: {},
   },
   plugins: [require('daisyui')],
+  daisyui: {
+    themes: ["black", 
+      {
+        light: {
+          ...require("daisyui/src/colors/themes")["[data-theme=light]"],
+          "--rounded-btn": 0,
+        },
+      }
+    ],
+  },
 }
