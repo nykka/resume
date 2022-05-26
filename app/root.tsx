@@ -1,5 +1,6 @@
 import type { LoaderFunction, MetaFunction } from "@remix-run/node";
 import {
+	Link,
 	Links,
 	LiveReload,
 	Meta,
@@ -52,10 +53,11 @@ export default function App() {
 			<body>
 				<div className="flex flex-col flex-wrap items-center">
 					<div className="flex flex-col flex-wrap items-center w-screen max-w-7xl py-2">
+						<Link className="sr-only absolute badge px-2 focus:not-sr-only focus:px-2 focus:absolute focus:h-5" to="#maincontent">Skip to main content</Link>
 						<header className="max-w-6xl w-full">
 							<NavList />
 						</header>
-						<main className="max-w-6xl">
+						<main id="maincontent" className="max-w-6xl">
 							<Outlet />
 						</main>
 						<footer>
