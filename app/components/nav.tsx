@@ -3,10 +3,10 @@ import image from "../images/nykka.png";
 import type { LoaderFunction } from "@remix-run/node";
 
 export const loader: LoaderFunction = async ({
-  request,
+	request,
 }) => {
-  const url = new URL(request.url);
-  const theme = url.searchParams.get("theme");
+	const url = new URL(request.url);
+	const theme = url.searchParams.get("theme");
 	return theme;
 };
 
@@ -16,13 +16,13 @@ export function NavList() {
 
 	function onClick(){
 		const url = new URL(window.location.href);
-		let params = new URLSearchParams(url.searchParams);
-		params.set('theme', theme === "light" ? "dark" : "light");
+		const params = new URLSearchParams(url.searchParams);
+		params.set("theme", theme === "light" ? "dark" : "light");
 		url.search = params.toString();
 		window.location.href = url.toString();
 	}
 
-  return (
+	return (
 		<div className="navbar bg-base-100">
 			<div className="flex-1">
 				<NavLink to="/">
@@ -78,6 +78,16 @@ export function NavList() {
 									abs
 								</NavLink>
 							</li>
+							<li>
+								<NavLink 
+									to={`/comics/trinidad?theme=${theme}`}
+									className={({ isActive }) =>
+										isActive ? "active" : undefined
+									}
+								>
+									trinidad
+								</NavLink>
+							</li>
 						</ul>
 					</li>
 					<li>
@@ -98,5 +108,5 @@ export function NavList() {
 				</ul>
 			</nav>
 		</div>
-  );
+	);
 }
