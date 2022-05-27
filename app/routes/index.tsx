@@ -15,7 +15,8 @@ export default function Index() {
 								/>
 							</div>
 						</div> 
-						<h1 className="text-6xl font-bold">Hi! I’m Vero ~ aka Nykka, and my pronouns are she/her.</h1> 
+						<h1 className="text-1xl uppercase font-bold">about me</h1>
+						<h2 className="text-6xl font-bold">Hi! I’m Vero ~ aka Nykka, and my pronouns are she/her.</h2> 
 						<p className="text-2xl">I'm a <span className="font-bold">Front End Developer</span> with a focus on web/web app development, pixel perfection, UX/UI, and accessibility. I like to work in diverse environments where caring for the best practices and teamwork are priorities. </p>
 						<p className="text-2xl">I love to participate in communities whose mission is to spread and share knowledge, especially to minorities and underrepresented communities. I’m actually a staff member in FrontendCafé a tech server in Discord. <Link to="https://discord.gg/2P99cTQZ" target="_blank" className="link hover:no-underline">Join the server.</Link></p>
 						<p className="text-2xl">In my free time I write and draw my own comic books. If you are interested in them, you can <Link className="link hover:no-underline" to="/comics">read my comics.</Link></p>
@@ -36,7 +37,7 @@ export default function Index() {
 						<h2 className="text-5xl font-bold">Current experience</h2>
 						<p className="text-2xl">I’m working as a Front End Developer at Smalls since August 2020. </p>
 						<p className="text-2xl">Smalls is a New York startup that offers a human-grade cat food subscription service shipped to your door. <Link to="https://www.smalls.com/" target="_blank" className="link hover:no-underline">Visit Smalls site.</Link></p>
-						<p className="text-2xl">
+						<div className="text-2xl">
 							<span className="font-bold">Some of my responsibilities at Smalls are: </span>
 							<ul className="inline">
 								<li className="inline">Turn Figma designs into features for our React applications, </li>
@@ -45,8 +46,8 @@ export default function Index() {
 								<li className="inline">set up A/B tests using Google Optimize, </li>
 								<li className="inline">give feedback to the UI designers about better practices and UX improvements. </li>
 							</ul>
-						</p>
-						<p className="text-2xl">
+						</div>
+						<div className="text-2xl">
 							<span className="font-bold">And our stack is: </span>
 							<ul className="inline">
 								<li className="inline">React, </li>
@@ -60,7 +61,7 @@ export default function Index() {
 								<li className="inline">Contentful, </li>
 								<li className="inline">Google Optimize, </li>
 							</ul>
-						</p>
+						</div>
 					</div>
 				</div>
 			</section>
