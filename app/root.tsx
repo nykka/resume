@@ -54,14 +54,17 @@ export default function App() {
 		ariaControls === subMenuName ? setSubMenuName(null) : setSubMenuName(ariaControls);
 		ariaExpanded === "true" ? target.setAttribute("aria-expanded", "false") : target.setAttribute("aria-expanded", "true");
 	};
+	
+	// TODO: add escape key support
 
 	useEffect(() => {
 		const body = document.querySelector("body");
-		const closeSubmenu = () => {
-			setSubMenuName(null);
+		const closeSubmenu = (e: MouseEvent) => {
+			const target = e.target as HTMLElement;
+			if(target.getAttribute("aria-controls") === null) setSubMenuName(null);
 		};
-		body?.addEventListener("click", closeSubmenu);
-		return () => body?.removeEventListener("click", closeSubmenu);
+		body?.addEventListener("click", (e) => closeSubmenu(e));
+		return () => body?.removeEventListener("click", (e) => closeSubmenu(e));
 	}, []);
 
 	return (
