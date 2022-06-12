@@ -6,7 +6,7 @@ export default function Index() {
 		<div className="py-20">
 			<section>
 				<div className="card w-full text-left flex flex-col flex-wrap items-left">
-					<div className="card-body items-left text-left w-full space-y-4">
+					<div className="card-body items-left text-left w-full">
 						<div className="avatar">
 							<div className="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
 								<img
@@ -15,11 +15,11 @@ export default function Index() {
 								/>
 							</div>
 						</div> 
-						<h1 className="text-1xl uppercase font-bold">about me</h1>
-						<h2 className="text-6xl font-bold">Hi! I’m Vero ~ aka Nykka, and my pronouns are she/her.</h2> 
-						<p className="text-2xl">I'm a <span className="font-bold">Front End Developer</span> with a focus on web/web app development, pixel perfection, UX/UI, and accessibility. I like to work in diverse environments where caring for the best practices and teamwork are priorities. </p>
-						<p className="text-2xl">I love to participate in communities whose mission is to spread and share knowledge, especially to minorities and underrepresented communities. I’m actually a staff member in FrontendCafé a tech server in Discord. <Link to="https://discord.gg/2P99cTQZ" target="_blank" className="link hover:no-underline">Join the server.</Link></p>
-						<p className="text-2xl">In my free time I write and draw my own comic books. If you are interested in them, you can <Link className="link hover:no-underline" to="/comics">read my comics.</Link></p>
+						<h1 className="text-1xl uppercase font-bold mt-4">about me</h1>
+						<h2 className="text-6xl font-bold -mt-2">Hi! I’m Vero ~ aka Nykka, and my pronouns are she/her.</h2> 
+						<p className="text-2xl mt-4">I'm a <span className="font-bold">Front End Developer</span> with a focus on web/web app development, pixel perfection, UX/UI, and accessibility. I like to work in diverse environments where caring for the best practices and teamwork are priorities. </p>
+						<p className="text-2xl mt-4">I love to participate in communities whose mission is to spread and share knowledge, especially to minorities and underrepresented communities. I’m actually a staff member in FrontendCafé a tech server in Discord. <Link to="https://discord.gg/2P99cTQZ" target="_blank" className="link hover:no-underline">Join the server.</Link></p>
+						<p className="text-2xl mt-4">In my free time I write and draw my own comic books. If you are interested in them, you can <Link className="link hover:no-underline" to="/comics">read my comics.</Link></p>
 					</div>
 				</div>
 			</section>
