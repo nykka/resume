@@ -20,7 +20,35 @@ export function NavList({
 	handleChangeTheme: (theme: "dark" | "light") => void;
 }) {
 
-	// TODO: circle back focus on mobile menu
+	useEffect(() => {
+		const mobileNav = document.querySelector("#mobile-nav");
+		const navList = mobileNav?.querySelector("ul") as HTMLElement;
+		const focusableEls = navList?.querySelectorAll(".mobile-nav-link") as NodeListOf<HTMLLIElement>;
+		const firstFocusableEl = focusableEls[0];  
+		const lastFocusableEl = focusableEls[focusableEls.length - 1];
+
+		function circleBackFocus (e: KeyboardEvent): void {
+			const isTabPressed = (e.key === "Tab" || e.code === "9");
+
+			if (!isTabPressed) { 
+				return; 
+			}
+
+			if( e.shiftKey ) /* shift + tab */ {
+				if(document.activeElement === firstFocusableEl) {
+					lastFocusableEl.focus();
+					e.preventDefault();
+				}
+			} else /* tab */ {
+				if(document.activeElement === lastFocusableEl) {
+					firstFocusableEl.focus();
+					e.preventDefault();
+				}
+			}
+		};
+		navList?.addEventListener("keydown", (e) => circleBackFocus(e));
+		return () => navList?.removeEventListener("keydown", (e) => circleBackFocus(e));
+	}, []);
 
 	const location = useLocation();
 	const closeMenuButton = useRef<HTMLButtonElement | null>(null);
@@ -40,7 +68,7 @@ export function NavList({
 	}, [location]);
 
 	const navClasses = "fixed right-0 top-0 w-full h-full z-10 bg-warning-content text-white";
-	const classes = "w-full block text-left p-3 h-full btn-square btn-ghost";
+	const classes = "w-full block text-left p-3 h-full btn-square btn-ghost mobile-nav-link";
 	const liClasses = "relative w-full sm:w-auto";
 
 	return (
@@ -68,7 +96,7 @@ export function NavList({
 				
 				<ul id="nav-list" className="flex inline-flex flex-col sm:flex-row w-full sm:w-auto">
 					<li className={liClasses}>
-						<button ref={closeMenuButton} id="close-menu" onClick={() => handleOpenMenu("close")} className="block text-left p-3 w-full btn-square btn-ghost flex items-center gap-3 sm:hidden">
+						<button ref={closeMenuButton} id="close-menu" onClick={() => handleOpenMenu("close")} className="block text-left p-3 w-full btn-square btn-ghost flex items-center gap-3 sm:hidden mobile-nav-link">
 							<span className="inline-block pointer-events-none">close menu</span>
 						</button>
 					</li>
@@ -84,7 +112,7 @@ export function NavList({
 						</NavLink>
 					</li>
 					<li className={liClasses}>
-						<span className="w-full block text-left p-3 h-full">comics</span>
+						<span className="w-full block text-left p-3 h-full sm:italic">comics</span>
 						<ul id="comics-menu" className="absolute w-full">
 							<li>
 								<NavLink 
