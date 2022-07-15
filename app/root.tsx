@@ -1,4 +1,4 @@
-import type { LoaderFunction, MetaFunction } from "@remix-run/node";
+import type { MetaFunction } from "@remix-run/node";
 import {
 	Link,
 	Links,
@@ -6,8 +6,7 @@ import {
 	Meta,
 	Outlet,
 	Scripts,
-	ScrollRestoration,
-	useLoaderData
+	ScrollRestoration
 } from "@remix-run/react";
 import { useEffect, useState } from "react";
 
@@ -33,32 +32,36 @@ export function links() {
 	];
 }
 
-export const loader: LoaderFunction = async ({
-	request,
-}) => {
-	const url = new URL(request.url);
-	const theme = url.searchParams.get("theme");
-	return theme;
-};
-
 export default function App() {
-
-	const theme: string = useLoaderData();
 
 	const [subMenuName, setSubMenuName] = useState<string | null>();
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
-	const [closeMenuButton, setCloseMenuButton] = useState<React.MutableRefObject<HTMLButtonElement | null> | null>();
-
-	function handleOpenMenu(){
-		setIsMenuOpen(!isMenuOpen);
+	const [theme, setTheme] = useState<"dark" | "light">("light");
+	const [closeMenuButton, setCloseMenuButton] = useState<
+		React.MutableRefObject<HTMLButtonElement | null> | null
+	>();
+	
+	function handleOpenMenu(status?: "open" | "close") {
+		const mobileMenuButton = document.querySelector(
+			"#hamburguer-button"
+		) as HTMLElement;
+		status === "close" && mobileMenuButton.focus();
+		status === "close" 
+			? mobileMenuButton?.setAttribute("aria-expanded", "false") 
+			: mobileMenuButton?.setAttribute("aria-expanded", "true");
+		status === "close" ? setIsMenuOpen(false) : setIsMenuOpen(true);
 	}
 
 	function handleOpenSubMenu(e: React.MouseEvent<HTMLButtonElement>){
 		const target = e.currentTarget;
 		const ariaControls = target.getAttribute("aria-controls");
 		const ariaExpanded = target.getAttribute("aria-expanded");
-		ariaControls === subMenuName ? setSubMenuName(null) : setSubMenuName(ariaControls);
-		ariaExpanded === "true" ? target.setAttribute("aria-expanded", "false") : target.setAttribute("aria-expanded", "true");
+		ariaControls === subMenuName 
+			? setSubMenuName(null) 
+			: setSubMenuName(ariaControls);
+		ariaExpanded === "true" 
+			? target.setAttribute("aria-expanded", "false") 
+			: target.setAttribute("aria-expanded", "true");
 	};
 
 	useEffect(() => {
@@ -69,8 +72,16 @@ export default function App() {
 
 	useEffect(() => {
 		const body = document.querySelector("body");
+		const mobileNav = document.querySelector("#mobile-nav");
+		const mobileMenuButton = document.querySelector(
+			"#hamburguer-button"
+		) as HTMLElement;
+
 		function closeSubmenu (e: KeyboardEvent): void {
 			if(e.key === "Escape") {
+				if(mobileNav){
+					mobileMenuButton?.focus();
+				}
 				setSubMenuName(null);
 				setIsMenuOpen(false);
 			};
@@ -85,9 +96,7 @@ export default function App() {
 			const target = e.target as HTMLElement;
 			if(target.getAttribute("aria-controls") === null) {
 				setSubMenuName(null);
-			}else if(target.id !== "close-menu"){
-				setIsMenuOpen(false);
-			};
+			}
 		};
 		body?.addEventListener("click", (e) => closeSubmenu(e));
 		return () => body?.removeEventListener("click", (e) => closeSubmenu(e));
@@ -105,6 +114,7 @@ export default function App() {
 						<Link className="sr-only absolute badge px-2 focus:not-sr-only focus:px-2 focus:absolute focus:h-5" to="#maincontent">Skip to main content</Link>
 						<header className="max-w-6xl w-full">
 							<NavList 
+							  handleChangeTheme={setTheme}
 								theme={theme} 
 								subMenuName={subMenuName} 
 								isMenuOpen={isMenuOpen} 
@@ -113,7 +123,9 @@ export default function App() {
 								setCloseMenuButton={setCloseMenuButton}
 							/>
 						</header>
-						<main id="maincontent" className={`max-w-6xl ${isMenuOpen ? "hidden sm:block" : "block"}`}>
+						<main id="maincontent" className={
+							`max-w-6xl ${isMenuOpen ? "hidden sm:block" : "block"}`
+						}>
 							<Outlet />
 						</main>
 						<footer className={`${isMenuOpen ? "hidden sm:block" : "block"}`}>
