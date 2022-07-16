@@ -65,6 +65,60 @@ export default function Index() {
 					</div>
 				</div>
 			</section>
+			<section>
+				<div className="card w-full text-left flex flex-col flex-wrap items-left">
+					<div className="card-body items-left text-left w-full">
+						<h2 className="text-5xl font-bold mb-4">Past experiences</h2>
+						<p className="text-2xl mb-4">My story with the internet starts with the BBS when I was a child. As I grew up I used to play with my dad’s PC until, in 1997, on my 15 years old birthday party, he bought me my first computer. Some time after I discovered Front Page and Macromedia Flash 4 and then my journey started.</p>
+						<p className="text-2xl mb-4">I’ve been working in the industry since 2006, moving from web design to programming along those years.</p>
+						<p className="text-2xl mb-4">This is a brief resume of those experiences:</p>
+						<p className="font-bold text-xl">Front End Developer {"&"} UI/UX designer</p>
+						<ul className="mt-0 text-lg">
+							<li className="mb-3 pb-3 border-b inline-block pr-12"> 
+								<p>Ombulabs, Birtwell Consulting {"&"} Debut</p>
+								<p>From: Jul 2018 to Aug 2020</p>
+							</li>
+							<li className="mb-3 pb-3 border-b inline-block pr-12">
+								<p>Sigur</p>
+								<p>From: Feb 2016 to Jun 2018</p>
+							</li>
+							<li className="mb-3 pb-3 border-b inline-block pr-12">
+								<p>Freelance</p>
+								<p>From: May 2012 to Feb 2016</p>
+							</li>
+							<li className="mb-3 pb-3 border-b inline-block pr-12">
+								<p>Lanzallamas.tv</p>
+								<p>From: Mar 2010 to May 2012</p>
+							</li>
+						</ul>
+						<p className="font-bold text-xl">Web Developer Teacher</p>
+						<ul className="mt-0 text-lg">
+							<li className="mb-3 pb-3 border-b inline-block pr-12"> 
+								<p>Estudio Urbano</p>
+								<p>From: Aug 2010 to Dec 2010</p>
+							</li>
+						</ul>
+						<p className="font-bold text-xl">Art Director</p>
+						<ul className="mt-0 text-lg">
+							<li className="mb-3 pb-3 border-b inline-block pr-12"> 
+								<p>DFCL studio</p>
+								<p>From: May 2009 to Dec 2009</p>
+							</li>
+						</ul>
+						<p className="font-bold text-xl">Web Designer {"&"} Web developer</p>
+						<ul className="mt-0 text-lg">
+							<li className="mb-3 pb-3 border-b inline-block pr-12"> 
+								<p>Wunderman</p>
+								<p>From: May 2008 to May 2009</p>
+							</li>
+							<li className="mb-3 pb-3 border-b inline-block pr-12"> 
+								<p>Pramer SCA</p>
+								<p>From: Sep 2006 to May 2008</p>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</section>
 			<section className="py-20">
 				<div className="card w-full text-left flex flex-col flex-wrap items-left">
 					<div className="card-body items-left text-left w-full">
