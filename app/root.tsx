@@ -36,7 +36,7 @@ export default function App() {
 
 	const [subMenuName, setSubMenuName] = useState<string | null>();
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
-	const [theme, setTheme] = useState<"dark" | "light">("light");
+	const [theme, setTheme] = useState<"dark" | "light">("dark");
 	const [closeMenuButton, setCloseMenuButton] = useState<
 		React.MutableRefObject<HTMLButtonElement | null> | null
 	>();

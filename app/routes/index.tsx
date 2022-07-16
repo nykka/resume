@@ -65,6 +65,134 @@ export default function Index() {
 					</div>
 				</div>
 			</section>
+			<section className="py-20">
+				<div className="card w-full text-left flex flex-col flex-wrap items-left">
+					<div className="card-body items-left text-left w-full">
+						<h2 className="text-2xl uppercase font-bold mb-0">Education</h2>
+						{/* MOBILE */}
+						<table className="text-left table table-compact mt-0 lg:hidden w-full">
+							<caption className="text-left text-xl mb-5">Places/People were/with whom I have studied from 2018 to 2022</caption>
+							<thead>
+								<tr>
+									<td></td>
+									<th scope="colgroup" colSpan={2} className="text-lg normal-case font-thin"><span aria-hidden>💻 </span>Engineering</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td></td>
+									<th className="font-bold">Alex Tait (mentorship)</th>
+									<th className="font-bold">CoderHouse (course)</th>
+								</tr>
+								<tr>
+									<th scope="row">2022</th>
+									<td>Accesibility</td>
+									<td></td>
+								</tr>
+								<tr>
+									<th scope="row">2018</th>
+									<td></td>
+									<td>Full Stack Development</td>
+								</tr>
+							</tbody>
+						</table>
+						<table className="text-left table table-compact mt-10 lg:hidden w-full">
+							<caption className="text-left text-xl mb-5">Places/People were/with whom I have studied from 2000 to 2006</caption>
+							<thead>
+								<tr>
+									<td></td>
+									<th scope="colgroup" colSpan={3} className="text-lg normal-case font-thin"><span aria-hidden>🎨 </span>Visual Arts</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td></td>
+									<th scope="col" className="font-bold">UBA</th>
+									<th scope="col" className="font-bold">Motivarte</th>
+									<th scope="col" className="font-bold">IDAC</th>
+								</tr>
+								<tr>
+									<th scope="row">2006</th>
+									<td>Graphic Design</td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<th scope="row">2003</th>
+									<td></td>
+									<td>Photography</td>
+									<td scope="rowgroup" rowSpan={2}>2D Animation</td>
+								</tr>
+								<tr>
+									<th scope="row">2000</th>
+									<td></td>
+									<td></td>
+								</tr>
+							</tbody>
+						</table>
+						{/* DESKTOP */}
+						<table className="text-left table mt-0 hidden lg:block w-full">
+							<caption className="text-left text-xl mb-5">Places/People were/with whom I have studied from 2000 to 2022</caption>
+							<thead>
+								<tr>
+									<td></td>
+									<th scope="colgroup" colSpan={2} className="text-lg normal-case font-thin"><span aria-hidden>💻 </span>Engineering</th>
+									<th scope="colgroup" colSpan={3} className="text-lg normal-case font-thin"><span aria-hidden>🎨 </span>Visual Arts</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td></td>
+									<th scope="col" className="font-bold">Alex Tait (mentorship)</th>
+									<th scope="col" className="font-bold">CoderHouse (course)</th>
+									<th scope="col" className="font-bold">UBA</th>
+									<th scope="col" className="font-bold">Motivarte</th>
+									<th scope="col" className="font-bold">IDAC</th>
+								</tr>
+								<tr>
+									<th scope="row">2022</th>
+									<td>Accesibility</td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<th scope="row">2018</th>
+									<td></td>
+									<td>Full Stack Development</td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<th scope="row">2006</th>
+									<td></td>
+									<td></td>
+									<td>Graphic Design</td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<th scope="row">2003</th>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td>Photography</td>
+									<td scope="rowgroup" rowSpan={2}>2D Animation</td>
+								</tr>
+								<tr>
+									<th scope="row">2000</th>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</section>
 		</div>
 	);
 }
