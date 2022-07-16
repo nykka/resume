@@ -119,7 +119,7 @@ export default function Index() {
 					</div>
 				</div>
 			</section>
-			<section className="py-20">
+			<section>
 				<div className="card w-full text-left flex flex-col flex-wrap items-left">
 					<div className="card-body items-left text-left w-full">
 						<h2 className="text-2xl uppercase font-bold mb-0">Education</h2>
